@@ -1,0 +1,26 @@
+{
+    "name" : "devto-bot-kick-extension",
+    "version" : "1.0",
+    "description" : "devto-bot-kick-extension",
+    "permissions": [],
+    "content_security_policy": {
+        "extension_pages": "script-src 'wasm-unsafe-eval' 'self'; object-src 'self';"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": [
+                "index.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["devto-bot-kick-extension_bg.wasm", "devto-bot-kick-extension.js", "index.js"],
+        "matches": ["*://example.com/*"]
+    }],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "User script"
+    },
+    "manifest_version": 3
+}
