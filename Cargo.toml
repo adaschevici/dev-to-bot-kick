@@ -3,13 +3,11 @@ name = "devto-bot-kick"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-crate-type = ["cdylib", "rlib"]
+# [lib]
+# crate-type = ["cdylib"]
 
 [dependencies]
-console_error_panic_hook = "0.1.7"
-dioxus = { version = "0.5.1", features = ["web"] }
-dioxus-web = "0.5.1"
+leptos = { version = "0.6.12", features = ["csr", "nightly"] }
 wasm-bindgen = "0.2.92"
 
 [dependencies.web-sys]

@@ -1,0 +1,37 @@
+[tasks.copy-static]
+command = "cp"
+args = ["static-files/index.js", "static-files/index.html", "dist/"]
+
+[tasks.copy-manifest]
+command = "cp"
+args = ["static-files/manifest_v3.json", "dist/manifest.json"]
+
+[tasks.fixup-manifest]
+command = "python3"
+args = ["scripts/fixup_manifest.py"]
+
+[tasks.build-dev]
+install_crate = "trunk"
+command = "trunk"
+args = ["build"]
+
+[tasks.build]
+install_crate = "trunk"
+command = "trunk"
+args = ["build", "--release"]
+
+[tasks.setup-ext-dev]
+dependencies = [
+    "build-dev",
+    "copy-static",
+    "copy-manifest",
+    "fixup-manifest",
+]
+
+[tasks.setup-ext]
+dependencies = [
+    "build",
+    "copy-static",
+    "copy-manifest",
+    "fixup-manifest",
+]

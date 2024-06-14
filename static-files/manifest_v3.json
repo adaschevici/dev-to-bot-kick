@@ -15,7 +15,7 @@
         }
     ],
     "web_accessible_resources": [{
-        "resources": ["devto-bot-kick-extension_bg.wasm", "devto-bot-kick-extension.js", "index.js"],
+        "resources": ["devto-bot-kick-df63da430a170c5d.js", "devto-bot-kick-df63da430a170c5d_bg.wasm"],
         "matches": ["*://example.com/*"]
     }],
     "action": {
