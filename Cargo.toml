@@ -1,16 +1,16 @@
 [package]
 name = "devto-bot-kick"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-console_error_panic_hook = "0.1.6"
-dioxus = "0.3.2"
-dioxus-web = "0.3.1"
-wasm-bindgen = "0.2.86"
+console_error_panic_hook = "0.1.7"
+dioxus = { version = "0.5.1", features = ["web"] }
+dioxus-web = "0.5.1"
+wasm-bindgen = "0.2.92"
 
 [dependencies.web-sys]
 version = "0.3"
